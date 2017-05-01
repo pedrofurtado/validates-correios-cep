@@ -1,0 +1,8 @@
+pt-BR:
+  correios_cep:
+    errors:
+      messages:
+        not_exists: '%{zipcode} não é um CEP existente'
+        connection_failed: 'falha na conexão com a API dos Correios'
+        invalid: '%{zipcode} não é um CEP válido'
+        timeouted: 'tempo esgotado de resposta com a API dos Correios'

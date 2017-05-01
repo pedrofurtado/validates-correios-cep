@@ -1,0 +1,8 @@
+de:
+  correios_cep:
+    errors:
+      messages:
+        not_exists: '%{zipcode} es ist nicht eine bestehende brasilianische Postleitzahl'
+        connection_failed: 'fehler bei der API der Post in Brasilien verbinden'
+        invalid: '%{zipcode} es ist keine gültige brasilianische Postleitzahl'
+        timeouted: 'timeout-Antwort mit dem Beitrag API'

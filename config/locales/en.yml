@@ -1,0 +1,8 @@
+en:
+  correios_cep:
+    errors:
+      messages:
+        not_exists: '%{zipcode} is not a existent Brazilian zipcode'
+        connection_failed: 'failure on connection with Brazilian Correios API'
+        invalid: '%{zipcode} is not a valid Brazilian zipcode'
+        timeouted: 'timeout with Brazilian Correios API'
