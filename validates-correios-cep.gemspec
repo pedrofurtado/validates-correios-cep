@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rails'
   spec.add_dependency 'activemodel'
   spec.add_dependency 'correios-cep'
+  spec.add_dependency 'net-http'
 
-  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'sqlite3'
