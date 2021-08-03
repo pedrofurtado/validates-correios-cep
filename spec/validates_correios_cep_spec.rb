@@ -23,6 +23,7 @@ RSpec.describe ValidatesCorreiosCep do
       klass_instance.zipcode = '01234567'
       expect(klass_instance.valid?).to eq false
       expect(klass_instance.errors.size).to eq 1
+      puts klass_instance.errors.full_messages.inspect
       expect(klass_instance.errors.full_messages.include?(I18n.t("#{@i18n_scope}.invalid", zipcode: '01234567'))).to eq true
     end
   end
