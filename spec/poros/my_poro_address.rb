@@ -1,0 +1,2 @@
+class MyPoroAddress
+end
