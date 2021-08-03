@@ -2,6 +2,8 @@
 
 RSpec.describe ValidatesCorreiosCep do
   it 'example test' do
-    expect(true).to eq true
+    MyAddress.new
+    MyPoroAddress.new
+    expect(false).to eq false
   end
 end
