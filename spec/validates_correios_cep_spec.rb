@@ -2,7 +2,6 @@
 
 RSpec.describe ValidatesCorreiosCep do
   before :each do
-    @i18n_scope = ::ActiveModel::Validations::CorreiosCepValidator::CORREIOS_CEP_I18N_SCOPE
     @my_address = MyAddress.new
     @my_address2 = MyAddress2.new
     @my_poro_address = MyPoroAddress.new
@@ -40,5 +39,15 @@ RSpec.describe ValidatesCorreiosCep do
   end
 
   it 'timeouted' do
+    Correios::CEP.configure do |config|
+      config.request_timeout = 0
+    end
+
+    @klasses.each do |klass_instance|
+      klass_instance.zipcode = '01131010'
+      expect(klass_instance.valid?).to eq false
+      expect(klass_instance.errors.size).to eq 1
+      expect(klass_instance.errors.full_messages.include?('Zipcode translation missing: en.correios_cep.errors.messages.timeouted')).to eq true
+    end
   end
 end
