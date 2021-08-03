@@ -13,7 +13,7 @@ RSpec.describe ValidatesCorreiosCep do
     describe 'built-in validations' do
       it 'valid' do
         @klasses.each do |klass_instance|
-          klass_instance.zipcode = '01131010'
+          klass_instance.zipcode = '011310106'
           expect(klass_instance.valid?).to eq true
           expect(klass_instance.errors.size).to eq 0
         end
