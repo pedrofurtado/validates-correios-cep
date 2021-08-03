@@ -1,5 +1,6 @@
 require 'correios-cep'
 require 'active_model'
+require 'net/http'
 
 module ActiveModel
   module Validations
