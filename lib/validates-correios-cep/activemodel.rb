@@ -14,7 +14,7 @@ module ActiveModel
                                 "#{CORREIOS_CEP_I18N_SCOPE}.connection_failed"
                               rescue ArgumentError
                                 "#{CORREIOS_CEP_I18N_SCOPE}.invalid"
-                              rescue ::Net::OpenTimeout
+                              rescue ::Net::OpenTimeout, ::HTTP::TimeoutError
                                 "#{CORREIOS_CEP_I18N_SCOPE}.timeouted"
                               end
 
