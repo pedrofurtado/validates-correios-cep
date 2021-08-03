@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/validates-correios-cep.svg)](https://badge.fury.io/rb/validates-correios-cep)
 [![Gem](https://img.shields.io/gem/dt/validates-correios-cep.svg)]()
-[![Build Status](https://travis-ci.org/pedrofurtado/validates-correios-cep.svg?branch=master)](https://travis-ci.org/pedrofurtado/validates-correios-cep)
+[![CI](https://github.com/pedrofurtado/validates-correios-cep/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/pedrofurtado/validates-correios-cep/actions/workflows/ci.yml)
 [![license](https://img.shields.io/github/license/pedrofurtado/validates-correios-cep.svg)]()
 
 ## Installation
