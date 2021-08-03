@@ -8,3 +8,6 @@
 /spec/reports/
 /tmp/
 sftp-config.json
+.rspec_status
+*.gem
+*.log
