@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'validates-correios-cep'
   spec.version       = ValidatesCorreiosCep::VERSION
   spec.authors       = ['Pedro Furtado']
-  spec.email         = ['pedro.felipe.azvedo.furtado@gmail.com']
+  spec.email         = ['pedro.felipe.azevedo.furtado@gmail.com']
 
   spec.summary       = %q{Brazilian zipcode validations for ActiveRecord, integrated with correios-cep gem.}
   spec.description   = spec.summary
