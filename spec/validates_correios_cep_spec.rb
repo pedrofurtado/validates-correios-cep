@@ -2,11 +2,7 @@
 
 RSpec.describe ValidatesCorreiosCep do
   before :each do
-    @my_address = MyAddress.new
-    @my_address2 = MyAddress2.new
-    @my_poro_address = MyPoroAddress.new
-    @my_poro_address2 = MyPoroAddress2.new
-    @klasses = [@my_address, @my_address2, @my_poro_address, @my_poro_address2]
+    @klasses = [MyAddress.new, MyAddress2.new, MyPoroAddress.new, MyPoroAddress2.new]
   end
 
   it 'valid' do
@@ -27,6 +23,17 @@ RSpec.describe ValidatesCorreiosCep do
   end
 
   it 'connection_failed' do
+    ::Correios::CEP.configure do |config|
+      config.proxy_url = 'http://10.20.30.40:8888'
+    end
+
+    @klasses.each do |klass_instance|
+      klass_instance.zipcode = '01131010'
+      expect(klass_instance.valid?).to eq false
+      expect(klass_instance.errors.size).to eq 1
+      puts klass_instance.errors.full_messages.inspect ############################################################
+      expect(klass_instance.errors.full_messages.include?('Zipcode translation missing: en.correios_cep.errors.messages.connection_failed')).to eq true
+    end
   end
 
   it 'invalid' do
@@ -39,7 +46,7 @@ RSpec.describe ValidatesCorreiosCep do
   end
 
   it 'timeouted' do
-    Correios::CEP.configure do |config|
+    ::Correios::CEP.configure do |config|
       config.request_timeout = 0
     end
 
