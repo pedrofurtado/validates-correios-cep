@@ -15,6 +15,7 @@ RSpec.describe ValidatesCorreiosCep do
       klass_instance.zipcode = '01131010'
       expect(klass_instance.valid?).to eq true
       expect(klass_instance.errors.size).to eq 0
+      sleep 1
     end
   end
 
@@ -24,6 +25,7 @@ RSpec.describe ValidatesCorreiosCep do
       expect(klass_instance.valid?).to eq false
       expect(klass_instance.errors.size).to eq 1
       expect(klass_instance.errors.full_messages.include?('Zipcode translation missing: en.correios_cep.errors.messages.not_exists')).to eq true
+      sleep 1
     end
   end
 
@@ -33,6 +35,7 @@ RSpec.describe ValidatesCorreiosCep do
       expect(klass_instance.valid?).to eq false
       expect(klass_instance.errors.size).to eq 1
       expect(klass_instance.errors.full_messages.include?('Zipcode translation missing: en.correios_cep.errors.messages.invalid')).to eq true
+      sleep 1
     end
   end
 
@@ -46,6 +49,7 @@ RSpec.describe ValidatesCorreiosCep do
       expect(klass_instance.valid?).to eq false
       expect(klass_instance.errors.size).to eq 1
       expect(klass_instance.errors.full_messages.include?('Zipcode translation missing: en.correios_cep.errors.messages.timeouted')).to eq true
+      sleep 1
     end
   end
 end
